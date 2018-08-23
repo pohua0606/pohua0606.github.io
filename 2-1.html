@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" >
+	<title>hw2-1</title>
+
+	<style type="text/css">
+
+		html,body{
+			margin: 0;
+		}
+
+		.navbar{
+			position: fixed;
+			height: 50px;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			color: white;
+			padding: 0px 10px;
+			background-color: #333a40;
+		}
+
+		.navbar .bigword{
+
+			font-size: 20px;
+			display: inline-block;
+			line-height: 50px;
+		}
+		
+		.navbar ul{
+
+			margin:0 0 0 5px;
+			padding: 0;
+			list-style: none;
+			display: inline-block;
+		}
+
+		.navbar ul li{
+
+			display: inline-block;
+			margin-left:15px;
+			color: grey;
+
+		}
+
+		.navbar ul li a{
+			text-decoration: none;
+			color: grey;
+		}
+
+		.navbar ul li a:hover{
+			color: white;
+
+		}
+
+		.bigGrey{
+			
+			margin-top:50px;
+			padding: 40px 0px;
+			background: #e9ecef;
+
+		}
+
+		.container{
+
+			max-width: 960px;
+			margin: 0 auto;
+			padding: 0px 20px;
+		}
+
+		.bigGrey .container .hello{
+
+			font-size: 72px;
+		}
+		
+		.bigGrey .container .word{
+
+			margin: 15px 0;
+		}
+
+		.bigGrey .container .learn{
+			
+			background: rgb(0, 123, 255);
+			color: white;
+			font-size: 20px;
+			padding: 15px 20px;
+			border: none;
+			border-radius: 4px;
+			transition: 0.3s;
+	
+		}
+
+
+		.bigGrey .container .learn:hover{
+			cursor: pointer;
+			background: #0069d9;
+		}
+
+		.three{
+			margin-top: 50px;
+		}
+
+		.heading{
+
+			display: inline-block;
+			/*因為container的左右兩邊padding各是20px*/
+     		width: calc((100% - 40px) / 3);
+		}
+
+		.title{
+			font-size: 35px;
+		}
+		
+		.content{
+
+			margin: 15px 0px;
+		}
+
+		.details{
+
+			background: #6b7377;
+			color: white;
+			font-size: 17px;
+			padding: 10px;
+			border: none;
+			border-radius: 4px;
+			transition: background 0.3s;
+		}
+
+		.details:hover{
+			cursor: pointer;
+			background:#484f54;
+		}
+		
+		.footer .container
+		{
+			margin-top: 50px;
+			padding-top: 20px;
+			border-top: 1px solid #aab2b7;
+			
+		}
+
+		@media screen and (max-width: 767px) {
+		
+			.three .heading{
+				width: 100%;
+			}
+
+			.heading ~ .heading{
+				margin-top: 20px;
+			}
+		}
+	 
+	</style>
+
+</head>
+
+
+<body>
+	<!-- Navbar -->
+	<div class="navbar">
+		<div class="bigword">Navbar</div>
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="">Link</a></li>
+		</ul>
+	</div>
+	
+	<!-- main-first -->
+	<div class="bigGrey">
+		<div class="container" >
+			<div class="hello">
+				Hello , World!
+			</div>
+
+			<div class="word">
+				This is a t
+				emplate for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
+			</div>
+			
+			<button class="learn"> 
+				Learn more >>
+			</button>
+		</div>
+	</div>
+
+	<!-- main-second -->
+	<div class="three"> 
+		<div class="container" >
+			
+			<div class="heading">
+
+				<div class="title">Heading</div>
+				<div class="content">
+					Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+				</div>
+				<button class="details">View details >></button>
+			
+			</div>
+
+			<div class="heading">
+				<div class="title">Heading</div>
+				<div class="content">
+					Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+				</div>
+				<button class="details">View details >></button>
+			</div>
+
+			<div class="heading">
+				<div class="title">Heading</div>
+				<div class="content">
+					Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+				</div>
+				<button class="details">View details >></button>
+			</div>
+		</div>
+	</div>
+	
+	<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			© Company 2017-2018
+		</div>
+	</div>
+
+</body>
+</html>
