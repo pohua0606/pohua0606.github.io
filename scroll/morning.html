@@ -201,13 +201,15 @@
     </section class="trans">
 
     <!-- total -->
-    <section class="trans" style="height:200vh;">
+    <section class="trans">
         <h1>TOTAL</h1>
         <div><canvas id="finalChart" width="200px" height="100px"></canvas></div>
-        <!-- HOURGLASS -->
+    </section>
+
+    <section class="trans" style="height:200vh;">
         <div class="row">
             <div class="col-6">
-                <div id='hour-glass' class="d-none animated" style="margin-top: 200px; left:50%; transform:translate(-50%);">
+                <div id='hour-glass' class="d-none animated" style="left:50%; transform:translate(-50%);">
                     <div id='glass'></div>
                     <div id='sand-stream'></div>
                     <div id='top-sand'></div>
@@ -215,18 +217,20 @@
                 </div>
             </div>
 
-            <div class="col-6" style="margin-top: 200px;"">
-                    <div class = " d-none" id="text_final1"
-                style="color:white; text-align:center; ">
-                <h3> 一天使用 4 小時，換算成一生...</h3>
+            <div class="col-6">
+                <div class=" d-none" id="text_final1" style="color:white; text-align:center; ">
+                    <h3>一天使用 <span style="font-size:60px; color:rgb(246, 99, 103) "> 4 </span> 小時，約每日的1/4</h3>
+                    <h3>以平均壽命80歲來算...</h3>
+                </div>
+                <br>
+                <div class="d-none" id="text_final2" style="color:white; text-align:center; ">
+                    <h3>將佔據你人生 <span style="font-size:60px; color:rgb(246, 99, 103)"> 20年 </span>的時間</h3>
+                </div>
+                <br>
+                <div class="d-none" id="text_final3" style="color:white; text-align:center; ">
+                    <h3></h3>
+                </div>
             </div>
-            <div class="d-none" id="text_final2" style="color:white; text-align:center; ">
-                <h3> 將佔據你人生 20 年的時間 </h3>
-            </div>
-            <div class="d-none" id="text_final3" style="color:white; text-align:center; ">
-                <h3> 這是你想過的人生嗎?</h3>
-            </div>
-        </div>
         </div>
     </section>
 
@@ -478,6 +482,21 @@
                     $("#phone_night").addClass('fadeOutDown slow cell');
                     $('#video_night').addClass('fadeOutDown slow cell');
                     $("#night_text").addClass('fadeOutDown slow cell');
+                }
+
+                if (scroll > 21000) {
+                    var glass_id = $('#hour-glass');
+                    var text_fin1 = $('#text_final1');
+                    var text_fin2 = $('#text_final2');
+                    var text_fin3 = $('#text_final3');
+                    glass_id.removeClass('d-none');
+                    glass_id.addClass('fadeInDown slower');
+                    text_fin1.removeClass('d-none');
+                    text_fin1.addClass('fadeInUp slower');
+                    text_fin2.removeClass('d-none');
+                    text_fin2.addClass('fadeInUp slower');
+                    text_fin3.removeClass('d-none');
+                    text_fin3.addClass('fadeInUp slower');
                 }
 
             });
@@ -914,11 +933,11 @@
 
     </script>
 
-<script>
+    <script>
         var ctxFinal = document.getElementById("finalChart").getContext('2d');
         var inViewFinal = false;
-        $(document).ready(function() {
-            $(window).scroll(function() {
+        $(document).ready(function () {
+            $(window).scroll(function () {
                 var winTopFinal = $(window).scrollTop();
                 var winhFinal = $(window).height();
                 var objposFinal = $("#finalChart").offset().top;
@@ -962,19 +981,19 @@
                                 }]
                             },
                             responsive: true, // default true
-                            title:{
+                            title: {
                                 display: true,
-                                text: "Time in day",
-                                fontSize: 25
+                                text: "每日平均使用4小時",
+                                fontSize: 40,
                             },
                             plugins: {
                                 datalabels: {
-                                formatter: function(value, context) {
-                                return context.chart.data.labels[context.dataIndex];
+                                    formatter: function (value, context) {
+                                        return context.chart.data.labels[context.dataIndex];
                                     }
                                 }
-                            }                        
-                        }                        
+                            }
+                        }
                     }
                     );
                     inViewFinal = true;
@@ -982,8 +1001,8 @@
             });
         });
     </script>
-    
-    <script>
+
+    <!-- <script>
             $(document).ready(function () {
                 $(window).scroll(function () {
                     var winTopGlass = $(window).scrollTop();
@@ -1005,7 +1024,7 @@
                     }
                 });
             });
-        </script>
+        </script> -->
 </body>
 
 

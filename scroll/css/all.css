@@ -131,9 +131,7 @@ body{
 }
 
 /* HOURGLASS */
-body {
-    margin: 50px;
-  }
+
   #hour-glass {
     position: relative;
     width: 60px;
